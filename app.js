@@ -5,10 +5,29 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-//Make connection to mongodb
+//Getting mongoose and user model
+var models = require('./models/user.js');
+var mongoose = require('mongoose');
+var User = mongoose.model("User");
+
+/*//Make connection to mongodb
 var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://localhost/TestDB';
-var str="";
+var str="";*/
+
+//Mongoose connection to db and add new document of User model
+
+//var newUser = new User({userName: 'Laurence2', password: '12345', email: 'hotmail@gmail.com', totalLikes: '33'  });
+
+/*mongoose.connect('mongodb://localhost/TestDB', function(err) {
+    if (err) throw err;
+    else
+        console.log("connected");
+        newUser.save(function (err) {
+            if (err) return handleError(err);
+            console.log("saved");
+        })
+});*/
 
 
 var routes = require('./routes/index');
@@ -50,13 +69,14 @@ MongoClient.connect(url, function(err, db){
     });
 });*/
 
-/*//Inserting document into collection
+/*//Inserting document into normal mongo collection
 MongoClient.connect(url, function(err, db){
     db.collection('Users').insertOne({
         UserName: newUser,
         Email: "NewUser@gmail.com"
     });
 });*/
+
 
 /*
 //Updating document in database
@@ -84,7 +104,7 @@ app.route('/UserName').get(function(req,res){
 
         cursor.each(function(err, item){
             if(item != null){
-                str = str + "&nbsp;&nbsp;&nbsp;&nbsp;Users id&nbsp;&nbsp;" + item.UserName + "</br>";
+                str = str + "&nbsp;&nbsp;&nbsp;&nbsp;User Name&nbsp;&nbsp;" + item.UserName + "</br>";
             }
         });
 
