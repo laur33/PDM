@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 //Make connection to mongodb
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost/EmployeeDB';
+var url = 'mongodb://localhost/TestDB';
 var str="";
 
 
@@ -40,10 +40,10 @@ MongoClient.connect(url, function(err, db){
 
 /*
 //Testing Querying the mongo database and prints all documents in cmd prompt
-//Cursor iterates through all employees
+//Cursor iterates through all users
 //Find specifies that we want to retrieve all documents from collection
 MongoClient.connect(url, function(err, db){
-    var cursor = db.collection('Employee').find();
+    var cursor = db.collection('Users').find();
 
     cursor.each(function(err, doc){
         console.log(doc);
@@ -52,19 +52,19 @@ MongoClient.connect(url, function(err, db){
 
 /*//Inserting document into collection
 MongoClient.connect(url, function(err, db){
-    db.collection('Employee').insertOne({
-        Employeeid: 4,
-        EmployeeName: "NewEmployee"
+    db.collection('Users').insertOne({
+        UserName: newUser,
+        Email: "NewUser@gmail.com"
     });
 });*/
 
 /*
 //Updating document in database
 MongoClient.connect(url, function(err,db) {
-    db.collection('Employee').updateOne(
-        {"EmployeeName": "NewEmployee"},
+    db.collection('Users').updateOne(
+        {"UserName": "NewUser"},
         {
-            $set: {"EmployeeName": "Mohan"}
+            $set: {"UserName": "Godzilla"}
         }
     );
 });*/
@@ -72,19 +72,19 @@ MongoClient.connect(url, function(err,db) {
 /*
 //Deleting document
 MongoClient.connect(url, function(err, db){
-    db.collection('Employee').deleteOne(
-        {"EmployeeName" : "Mohan"}
+    db.collection('Users').deleteOne(
+        {"UserName" : "Godzilla"}
     );
 });*/
 
-/*//Get all records in employee collection and work with them
-app.route('/Employeeid').get(function(req,res){
+/*//Get all records in user collection and work with them
+app.route('/UserName').get(function(req,res){
     MongoClient.connect(url, function(err, db){
-        var cursor = db.collection('Employee').find();
+        var cursor = db.collection('Users').find();
 
         cursor.each(function(err, item){
             if(item != null){
-                str = str + "&nbsp;&nbsp;&nbsp;&nbsp;Employee id&nbsp;&nbsp;" + item.Employeeid + "</br>";
+                str = str + "&nbsp;&nbsp;&nbsp;&nbsp;Users id&nbsp;&nbsp;" + item.UserName + "</br>";
             }
         });
 
