@@ -9,8 +9,9 @@ run mongod.exe.
 
 Open command prompt type:
 
-mongo
-use TestDB
+1: mongo
+
+2: use TestDB
 
 npm start while in project directory to run
 
