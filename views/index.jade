@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(name="add-estimation", method="post")
+    div.input
+      span.label Title
+      input(type="text", name="Employee ID")
+    div.input
+      span.label Description
+      textarea(name="Employee Name", cols="40", rows="5")
+    div.actions
+      input(type="submit", value="add")
