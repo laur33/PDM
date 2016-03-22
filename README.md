@@ -7,9 +7,11 @@ mkdir C:\data\db   (default mongodb test db directory)
 
 run mongod.exe.  
 
-Open command prompt type 
-1: mongo
-2: use TestDB
+Open command prompt type:
+
+mongo
+use TestDB
+
 
 npm start while in project directory to run
 
