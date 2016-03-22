@@ -3,6 +3,9 @@
 //var User = mongoose.model("Improvements");
 //var models = require('./models/submissions.js'); <--- needs directory path to be relative from the document that is invoking
 
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
 // Each submission must be tied to a user
 var Submissions = new Schema({
     categories: String,
