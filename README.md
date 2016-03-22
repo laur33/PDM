@@ -7,7 +7,7 @@ mkdir C:\data\db   (default mongodb test db directory)
 
 run mongod.exe.  
 
-Open command prompt type:
+Open a new command prompt type:
 
 1: mongo
 
