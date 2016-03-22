@@ -13,7 +13,7 @@ Open command prompt type:
 
 2: use TestDB
 
-npm start while in project directory to run
+npm start while in project directory (../Project) to run
 
 Web front should then be accessible on localhost:3000
 
