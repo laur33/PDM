@@ -1,4 +1,4 @@
-//Defined the comments schema and model to call this in other files add these lines to the top
+//Defined the improvements schema and model to call this in other files add these lines to the top
 //var mongoose = require('mongoose');
 //var User = mongoose.model("Improvements");
 //var models = require('./models/improvements.js'); <--- needs directory path to be relative from the document that is invoking

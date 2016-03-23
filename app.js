@@ -10,14 +10,13 @@ var models = require('./models/user.js');
 var mongoose = require('mongoose');
 var User = mongoose.model("User");
 
-/*//Make connection to mongodb
+//Make connection to mongodb
 var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://localhost/TestDB';
-var str="";*/
+var str="";
 
 //Mongoose connection to db and add new document of User model
 
-//var newUser = new User({userName: 'Laurence2', password: '12345', email: 'hotmail@gmail.com', totalLikes: '33'  });
 
 /*mongoose.connect('mongodb://localhost/TestDB', function(err) {
     if (err) throw err;
@@ -97,21 +96,25 @@ MongoClient.connect(url, function(err, db){
     );
 });*/
 
-/*//Get all records in user collection and work with them
-app.route('/UserName').get(function(req,res){
-    MongoClient.connect(url, function(err, db){
-        var cursor = db.collection('Users').find();
+//Get all records in user collection and display them in localhost:3000/UserList
+//by converting into a string and res.send(str) Currently mongoose not implemented here
+app.route('/UserList').get(function(req,res){
+  MongoClient.connect(url, function(err, db){
+        if (err) throw err;
+        var cursor = db.collection('users').find();
 
         cursor.each(function(err, item){
+
             if(item != null){
-                str = str + "&nbsp;&nbsp;&nbsp;&nbsp;User Name&nbsp;&nbsp;" + item.UserName + "</br>";
+                str = str + "&nbsp;&nbsp;&nbsp;&nbsp;User Name&nbsp;&nbsp;" + item.userName + "</br>";
             }
         });
 
         res.send(str);
+        //Re initializes string otherwise would keep building on above every refresh
+        str = " ";
     });
-});*/
-
+});
 
 
 
