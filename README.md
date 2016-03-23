@@ -23,4 +23,6 @@ Enter a Username, password and email click add and it will be stored in TestDB i
 
 If you want to add a second user please refresh the page first otherwise you'll get an error.
 
+Can retrieve the username entered by going to localhost:3000/UserList (Have to refresh twice for data to show up)
+
 Install robomongo to check and ensure data is updated in database, have to refresh the query in robomongo each time you enter new data.
