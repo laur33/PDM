@@ -13,7 +13,9 @@ Open a new command prompt type:
 
 2: use TestDB
 
-npm start while in project directory to run, alternatively just open the project in webstorm and run bin\www from there.
+Open a new command prompt and type
+
+'npm start' while in project directory to run, alternatively just open the project in webstorm and run bin\www from there.
 
 Web front should then be accessible on localhost:3000
 
