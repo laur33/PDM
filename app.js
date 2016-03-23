@@ -110,7 +110,9 @@ app.route('/UserList').get(function(req,res){
             }
         });
 
+        //Sends string that is in html format to localhost:3000/UserList
         res.send(str);
+
         //Re initializes string otherwise would keep building on above every refresh
         str = " ";
     });

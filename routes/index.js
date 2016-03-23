@@ -9,7 +9,7 @@ var User = mongoose.model("User");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'PDM Project' });
 });
 
 //Get data from the form. Prints to console and inserts into database
